@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <title>How to Create a Currency Converter in JavaScript</title>
+</head>
+<body>
+   <h1>Currency Converter</h1>
+   <p> Select Currency and enter Amount to convert.</p>
+   <form>
+      <label>From:</label>
+      <select id="fromCurrency" (change)="selectfrom($event)">
+         <option value="" disabled selected hidden>fromCurrency</option>
+        <option value="1.126735">USD</option>
+         <option value="0.876893">GBP</option>
+         <option value="79.677056">INR</option>
+      </select>
+      <label>To:</label>
+      <select id="toCurrency"(change)= "selectto($event)">
+         <option value="" disabled selected hidden>toCurrency</option>
+         <option value="1.126735">USD</option>
+         <option value="0.876893">GBP</option>
+         <option value="79.677056">INR</option>
+      </select>
+      <label>Amount:</label>
+      <input type="text" id="amount" #box/>
+      <button type="button" id="submitButton" (click)="getVal(box.value)">Convert</button>
+      <div class="result"></div>
+      <div class="result" id ="result">
+      <p id = "resValue">{{resValue}}</p></div>
+   </form>
+</body>
+</html>
